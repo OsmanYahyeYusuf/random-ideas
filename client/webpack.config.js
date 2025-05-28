@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const historyApiFallback = require('connect-history-api-fallback');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: './src/index.js',
   output:{
     path: path.resolve(__dirname,'../public'),
@@ -18,6 +18,9 @@ module.exports = {
     hot:true,
     compress:true,
     historyApiFallback:true,
+    Proxy: {
+      '/api': 'http://localhost:5000'
+    }
   },
   module:{
     rules: [
