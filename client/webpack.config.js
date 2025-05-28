@@ -18,9 +18,13 @@ module.exports = {
     hot:true,
     compress:true,
     historyApiFallback:true,
-    Proxy: {
-      '/api': 'http://localhost:5000'
+   proxy: [
+    {
+      context: ['/api'],
+      target: 'http://localhost:5000',
+      changeOrigin: true,
     }
+  ]
   },
   module:{
     rules: [

@@ -19,8 +19,8 @@ app.use(express.urlencoded({ extended: false }));
 
 //cros middleware
 app.use(cors({
-  origin: ['http://localhost:5000','http://localhost:3000'],
-  Credential: true,
+  origin: ['http://localhost:5000','http://localhost:3000',],
+  Credentials: true,
 }))
 
 app.get('/', (req,res)=>{
